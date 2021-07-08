@@ -2,11 +2,13 @@
 
 declare(strict_types=1);
 
-class IndexController extends ControllerBase
+use Phalcon\Mvc\Controller;
+
+class IndexController extends Controller
 {
 
     public function indexAction()
     {
-        echo "<h1>hey</h1>";
+        $this->view->users = Users::find();
     }
 }
